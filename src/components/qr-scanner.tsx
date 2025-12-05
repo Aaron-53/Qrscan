@@ -80,7 +80,7 @@ export function QrScanner() {
     const config = { fps: 10, qrbox: { width: 250, height: 250 }, supportedScanTypes: [] };
 
     html5QrCode.start(
-      { facingMode: "environment" },
+      { facingMode: "user" },
       config,
       qrCodeSuccessCallback,
       qrCodeErrorCallback
