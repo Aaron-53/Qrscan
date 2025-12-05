@@ -38,7 +38,7 @@ export function QrScanner() {
         html5QrCode.pause();
       }
 
-      const baseUrl = "http://172.20.10.4/:5000;
+      const baseUrl = "http://172.20.10.4/:5000";
       const url = `${baseUrl}/team/${decodedText}`;
 
       fetch(url)
