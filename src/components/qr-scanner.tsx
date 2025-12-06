@@ -33,10 +33,6 @@ export function QrScanner() {
         return;
       }
       lastScannedRef.current = decodedText;
-      if (html5QrCode.getState() === Html5QrcodeScannerState.SCANNING) {
-        setStatus("paused");
-        html5QrCode.pause();
-      }
 
       const baseUrl = "http://192.168.8.191:5000";
       const url = `${baseUrl}/team/${decodedText}`;
@@ -64,15 +60,12 @@ export function QrScanner() {
         })
         .finally(() => {
           setTimeout(() => {
-            if (!didUnmount && html5QrCode.getState() === Html5QrcodeScannerState.PAUSED) {
-              html5QrCode.resume();
-              setStatus("scanning");
+            if (!didUnmount) {
               lastScannedRef.current = null;
             }
           }, 2000);
         });
     };
-
     const qrCodeErrorCallback = (error: string) => {
       // This is called for non-qr images, we can ignore it.
     };
