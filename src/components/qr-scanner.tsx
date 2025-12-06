@@ -136,10 +136,10 @@ export function QrScanner() {
       <CardHeader className="bg-background/80 backdrop-blur-sm z-10">
         <CardTitle className="flex items-center gap-2 text-2xl font-headline text-primary">
           <Camera />
-          QR Scanner
+          Welcome to Omega
         </CardTitle>
         <CardDescription>
-          Point your camera at a QR code to scan it.
+          Scan your QR to CheckIn
         </CardDescription>
       </CardHeader>
       <CardContent className="p-0 relative">
