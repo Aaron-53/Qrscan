@@ -34,7 +34,7 @@ export function QrScanner() {
       }
       lastScannedRef.current = decodedText;
 
-      const baseUrl = "http://10.28.52.5:5000";
+      const baseUrl = "http://192.168.8.191:5000";
       const url = `${baseUrl}/team/${decodedText}`;
 
       fetch(url)
