@@ -45,18 +45,9 @@ export function QrScanner() {
           return response.text();
         })
         .then(() => {
-          toast({
-            title: "Registered!",
-            description: `Content '${decodedText}' has been successfully registered.`,
-          });
         })
         .catch(err => {
           console.error("API call failed:", err);
-          toast({
-            title: "Registration Failed",
-            description: `Could not register '${decodedText}'. Please try again.`,
-            variant: "destructive",
-          });
         })
         .finally(() => {
           setTimeout(() => {
